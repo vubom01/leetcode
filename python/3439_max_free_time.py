@@ -1,4 +1,14 @@
-# https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-i/
+"""
+https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-i/description/
+"""
+
+"""
+- With k events, we can shift all the events to the left so that the distance to the (k+1)th event is maximized
+- When adding a new event to the k-segment, remove the event at the start of the segment
+- Recalculate the end time
+- TC: O(n)
+- SC: O(1)
+"""
 
 from typing import List
 

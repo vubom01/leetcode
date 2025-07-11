@@ -1,3 +1,14 @@
+"""
+https://leetcode.com/problems/flip-equivalent-binary-trees/description/
+"""
+
+"""
+- DFS
+- Create a description string for how the nodes are traversed
+- TC: O(n)
+- SC: O(n)
+"""
+
 from typing import Optional
 
 
@@ -6,6 +17,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     def dfs(self, root: Optional[TreeNode], d: int):

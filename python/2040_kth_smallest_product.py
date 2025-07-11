@@ -3,8 +3,17 @@ https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays/descript
 """
 
 """
-- Binary search
-- 
+- Binary search the result
+- For each value, counter the number of pairs whose product of 2 numbers is less than it
+- How to count the number of pairs?
+--- Approach 1: Binary Search -> Time Limit Exceeded
+    - For each index i1 in the nums1, find the largest index i2 in nums2 such that nums1[i1] * nums2[i2] <= val
+    - TC: O(n * log m * log 2e10)
+    - SC: O(1)
+--- Approach 2: Two pointers
+    - Use a pointer on nums1 and another on nums2, and handle negative and positive number cases separately
+    - TC: O((n + m) log 2e10)
+    - SC: O(1)
 """
 
 from typing import List

@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/description/?envType=daily-question&envId=2024-09-10
+"""
+https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/description/
+"""
 
 from typing import Optional
 
@@ -16,20 +18,11 @@ class Solution:
         return self.findGreatestCommonDivisior(b, a % b)
 
     def insertGreatestCommonDivisors(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        node = head
-        while node is not None:
-            if node.next is not None:
-                a = node.val
-                b = node.next.val
-                newNode = ListNode(
-                    val = self.findGreatestCommonDivisior(a, b),
-                    next = node.next
-                )
-                node.next = newNode
-                node = node.next
-
-            node = node.next
-
+        current = head
+        while current and current.next:
+            gcd = self.findGreatestCommonDivisior(current.val, current.next.val)
+            current.next = ListNode(gcd, current.next)
+            current = current.next.next
         return head
 
 

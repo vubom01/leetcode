@@ -1,4 +1,14 @@
-# https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+"""
+https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
+"""
+
+"""
+- The smallest sum is formed by index i of nums1 and index j of nums2
+- The next smaller sum will be either from (i + 1, j) and (i, j + 1)
+- Use a heap to keep track of the smallest sums
+- TC: O(n log n)
+- SC: O(n)
+"""
 
 import heapq
 from typing import List

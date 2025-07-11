@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/divide-players-into-teams-of-equal-skill/description/
+"""
+https://leetcode.com/problems/divide-players-into-teams-of-equal-skill/description/
+"""
 
 """
 - We can calculate the total skill of each team: sumOfEachTeam

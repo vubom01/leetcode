@@ -1,4 +1,13 @@
-# https://leetcode.com/problems/valid-arrangement-of-pairs/description/?envType=daily-question&envId=2024-12-02
+"""
+https://leetcode.com/problems/valid-arrangement-of-pairs/description/
+"""
+
+"""
+- Convert pairs to graph
+- Use Hierholzer’s Algorithm to find Euler path
+- TC: O(n)
+- SC: O(n)
+"""
 
 from collections import defaultdict
 from typing import List
@@ -6,7 +15,7 @@ from typing import List
 
 class Solution:
     def validArrangement(self, pairs: List[List[int]]) -> List[List[int]]:
-        graph = {}
+        graph = defaultdict(list)
         for u, v in pairs:
             if u in graph:
                 graph[u].append(v)
@@ -32,13 +41,12 @@ class Solution:
         if start is None and end is None:
             start = next((v for v in graph if out_degree[v] > 0), None)
 
-        graph_copy = defaultdict(list, {u: graph[u][:] for u in graph})
         path = []
         stack = [start]
         while stack:
             u = stack[-1]
-            if graph_copy[u]:
-                v = graph_copy[u].pop()
+            if graph[u]:
+                v = graph[u].pop()
                 stack.append(v)
             else:
                 v = stack.pop()
@@ -47,3 +55,7 @@ class Solution:
 
         path.reverse()
         return path
+
+
+s = Solution()
+print(s.validArrangement([[5, 1], [4, 5], [11, 9], [9, 4]]))

@@ -1,4 +1,15 @@
-# https://leetcode.com/problems/find-the-k-th-character-in-string-game-ii/description/
+"""
+https://leetcode.com/problems/find-the-k-th-character-in-string-game-ii/description/
+"""
+
+"""
+- Let k = 2 ^ i + t
+- The k-th character is calculated based on the t-th character after i operations
+- Find the largest i such that k > 2 ^ i
+- Update k to k - 2 ^ i. If operations[i] = 1, increase the result by 1
+- TC: O(n) (can be optimize to log k)
+- SC: O(1)
+"""
 
 from typing import List
 

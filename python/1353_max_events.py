@@ -1,4 +1,16 @@
-# https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended
+"""
+https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/
+"""
+
+"""
+- Greedy
+- Sort the events list
+- For each day, find the event that can be attended
+- If there are multiple events, select the event with the minimum end time
+- TC: O(maxDay log n)
+- SC: O(n)
+"""
+
 import heapq
 from typing import List
 

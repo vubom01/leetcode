@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/rank-transform-of-an-array/?envType=daily-question&envId=2024-10-02
+"""
+https://leetcode.com/problems/rank-transform-of-an-array/description/
+"""
 
 from typing import List
 
@@ -11,4 +13,4 @@ class Solution:
 
 
 sol = Solution()
-print(sol.arrayRankTransform([40,10,20,30]))
+print(sol.arrayRankTransform([40, 10, 20, 30]))

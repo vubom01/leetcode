@@ -1,4 +1,16 @@
-# https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/description/?envType=daily-question&envId=2024-11-28
+"""
+https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/description/
+"""
+
+"""
+- distance[u][v] is the minimum number of obstacles that need to remove to go from (0, 0) to (u,v)
+- Solution 1: Use Dijkstra's algorithm to find the shortest path on a weighted graph
+  -- TC: O(n * m * log(n * m))
+  -- SC: O(n * m)
+- Solution 2: Use BFS
+  -- TC: O(n * m)
+  -- SC: O(n * m)
+"""
 
 import heapq
 from typing import List

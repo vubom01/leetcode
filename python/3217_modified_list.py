@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/description/
+"""
+https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/description/
+"""
 
 """
 - Create a dummy node that points to the head of the linked list (head)

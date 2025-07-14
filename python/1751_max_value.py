@@ -1,5 +1,20 @@
-# https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii
-from functools import cmp_to_key
+"""
+https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/description/
+"""
+
+""" 
+- Dynamic Programming
+- Sort the events list in increasing order based on end time
+- dp[i][j] is the highest score achievable by attending j events among the events from 0 to i
+- If we do not attend event j -> dp[i][j] = dp[i-1][j]
+- Otherwise, dp[i][j] = max(dp[t][j-1] + val[i]) for t in [0, i-1] such that start[i] >= end[t]
+- Because dp[i][j] depends on dp[i-1][j], we only need to find the largest t
+- dp[i][j] = max(dp[i-1][j], dp[t][j-1] + val[i])
+- Use binary search to find t
+- TC: O(n log n)
+- SC: O(n * k)
+"""
+
 from typing import List
 
 
@@ -10,7 +25,7 @@ class Solution:
         return x[1] - y[1]
 
     def maxValue(self, events: List[List[int]], k: int) -> int:
-        events.sort(key=cmp_to_key(self.compare))
+        events.sort()
         n = len(events)
         dp = [[0 for _ in range(k + 1)] for _ in range(n + 1)]
         res = 0

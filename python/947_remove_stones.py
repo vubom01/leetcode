@@ -1,4 +1,12 @@
-# https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/?envType=daily-question&envId=2024-08-29
+"""
+https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/description/
+"""
+
+"""
+- Use a disjoint set (union-find) data structure to identify the connected component
+- TC: O(n)
+- SC: O(n)
+"""
 
 from typing import List
 

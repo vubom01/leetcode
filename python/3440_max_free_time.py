@@ -1,4 +1,14 @@
-# https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-ii
+"""
+https://leetcode.com/problems/reschedule-meetings-for-maximum-free-time-ii/description/
+"""
+
+"""
+- For the i-th event, check if it can be moved before event i-1 or after event i+1
+- The free time is calculated based on event i-1 and event i+1
+- If not, move event i to the end time of event i-1, and update the free time based on event i+1
+- TC: O(n)
+- SC: O(n)
+"""
 
 from typing import List
 
